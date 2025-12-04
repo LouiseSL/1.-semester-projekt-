@@ -1,0 +1,107 @@
+
+* { margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box; }
+html {
+    scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+  
+}
+header {
+  position: sticky;
+  top: 0;
+  background-color: white; /* vigtigt ellers kan man se igennem */
+  z-index: 1000;           /* så den ligger over indholdet */
+}
+header {
+  border-bottom: 1px solid #ddd;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+/* ---- Andre styles ---- */
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  display: flex;
+  flex-direction: column;   /* Vertikal menu på mobil */
+  width: 100%;
+}
+.navigation li {
+  width: 100%;
+}
+
+.navigation a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  background: rgb(61, 7, 7);
+  color: white;
+  text-decoration: none;
+  letter-spacing: 3px;
+}
+
+.navigation a:hover {
+background: rgb(61, 7, 7);
+}
+
+/* --- STØRRE SKÆRME (fx computer) --- */
+@media (min-width: 750px) {
+  .navigation ul {
+    flex-direction: row;  /* Gør menuen vandret */
+    justify-content: flex-end; /* Skub alt til højre */
+    
+  }
+
+  .navigation li {
+    width: auto; /* så knapperne bliver smalle i stedet for 100% brede */
+  }
+
+  .navigation a {
+    padding: 20px;
+  }
+ 
+}
+/* --- OM MIG sektion: billede venstre, tekst højre --- */
+
+.about-row {
+  display: flex;          /* gør at billed og tekst står ved siden af hinanden */
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.about-image img {
+  max-width: 250px;       /* billede venstre */
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.about-text {
+  flex: 1;
+    background-color: blue;
+  padding: 1rem;
+  border-radius: 8px;                /* tekst højre */
+}
+
+
+
