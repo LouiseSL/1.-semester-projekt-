@@ -26,7 +26,7 @@ body::before {
   background-size: contain;
   background-repeat: no-repeat;
   filter: sepia(40%) contrast(90%) brightness(85%); /* <-- gør den vintage */
-  opacity: 0.12;
+  opacity: 0.10;
   pointer-events: none;
   z-index: -1;
 }
@@ -159,19 +159,21 @@ header {
   align-items: center;    /* gør dem vertikalt aligned */
 }
 
-.about-image img {
-  max-width: 250px;       /* størrelse på billedet */
-  width: 100%;
-  border-radius: 8px;
-
-}
 .about-image {
   padding: 14px;
   border: 4px double #C3A36A;
   border-radius: 4px;
   position: relative;
   background-color: rgba(0,0,0,0.05);
+  max-width: 250px;     /* ← denne styrer størrelsen */
 }
+
+.about-image img {
+  width: 100%;          /* ← fylder containeren */
+  height: auto;
+  border-radius: 8px;
+}
+
 
 /* Deco hjørner */
 .about-image::before,
