@@ -1,62 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Min side</title>
+    <link rel="stylesheet" href="forsteigen.css">
 </head>
-<body>
-    
-</body>
-</html>
-<html lang="da"> <!--da = dansk-->
-<head> <!-- overordnede indstillinger-->
-  <meta charset="UTF-8"> <!--dette gøt, at jeg må skrive æøå-->  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Min side</title>
-  <link rel="stylesheet" href="forsteigen.css">
-</head> 
 
 <body>
+
     <header>
-    <nav class="navigation">
-        <a href="#">Om mig</a>
-        <a href="ommig.html">Færdigheder</a>
-        <a href="#">Kontakt</a>
-</nav>
+        <nav class="navigation">
+            <a href="#about">Om mig</a>
+            <a href="#skills">Færdigheder</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
     </header>
-<main>
-    <section id="about" class=”ommig”>
 
-  <div class="about-row"> 
-      <h2>Om mig</h2>
-    </div>
-    <div class="about-image">
-      <img src="img/mig.jpg" alt="Billede af mig">
-    </div>
+    <main>
 
-    <div class="about-text">
-      <p>
-        Her skriver du en tekst om dig selv.  
-        Hvem du er, hvad du læser, og hvad du gerne vil arbejde med.
-      </p>
-    </div>
-  </div>
-</section>
+        <!-- OM MIG SEKTION -->
+        <section id="about" class="ommig">
+            <h2>Om mig</h2>
 
-<section id="skills">
-      <h2>Færdigheder</h2>
+            <!-- Denne boks styrer layoutet (flexbox) -->
+            <div class="about-row">
 
-      <ul>
-        <li>Færdighed 1 – kort beskrivelse</li>
-        <li>Færdighed 2 – kort beskrivelse</li>
-        <li>Færdighed 3 – kort beskrivelse</li>
-      </ul>
-    </section>
-</main>
-  <!-- Indholdet på din side skal stå her -->
-<footer></footer>
+                <!-- Billede til venstre -->
+                <div class="about-image">
+                    <img src="IMG_2318-kopi.jpg" alt="Billede af mig">
+                </div>
+
+                <!-- Tekst til højre -->
+                <div class="about-text">
+                    <p>
+                        Jeg brænder for at skabe, både analogt og digitalt — blandt andet gennem tegning, maling, keramik samt fotografi. Jeg ser frem til at udvikle mine kompetencer inden for den digitale verden, herunder billede- og videoredigering og UI/UX-design.
+                        Jeg er opvokset i en familie, hvor kreativitet er drivkraften i alt, hvad vi laver, og jeg motiveres af at fordybe mig, lære, udforske og skabe løsninger, der både er æstetiske og meningsfulde for brugeren.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FÆRDIGHEDER -->
+        <section id="skills">
+            <h2>Færdigheder</h2>
+
+            <ul>
+                <li>Færdighed 1 – kort beskrivelse</li>
+                <li>Færdighed 2 – kort beskrivelse</li>
+                <li>Færdighed 3 – kort beskrivelse</li>
+            </ul>
+        </section>
+
+        <!-- KONTAKT -->
+        <section id="contact" class="kontakt-info">
+            <h2>Kontakt</h2>
+            <p>Email: dinmail@example.com</p>
+            <p>Telefon: 12 34 56 78</p>
+        </section>
+
+    </main>
+
+    <footer></footer>
+
 </body>
 </html>
+
 
 
