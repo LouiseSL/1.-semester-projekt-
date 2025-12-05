@@ -9,6 +9,7 @@ html {
 body {
   margin: 0;
   font-family: sans-serif;
+  background-color: #D6D0C8;
 }
 header {
   position: sticky;
@@ -44,11 +45,27 @@ header {
   text-decoration: none;
   letter-spacing: 3px;
 }
+
+.nav-logo {
+  width: 18px;       /* mindre = passer bedre */
+  height: auto;
+  margin-left: 1rem;
+}
+
+
+.nav-logo {
+  filter: invert(100%);
+}
+
+
+
 .navigation {
   display: flex;
   flex-direction: column; /* mobil */
-  background: rgb(61, 7, 7);   /* <-- FARVEN FLYTTET HER */
+  background: #2F1B11;   /* <-- FARVEN FLYTTET HER */
 }
+
+
 
 
 /* MOBILE FIRST: lodret menu */
@@ -69,6 +86,12 @@ header {
 background: rgb(61, 7, 7);
 }
 
+.ikon {
+  width: 20px;        /* ikonets størrelse */
+  height: auto;
+  vertical-align: middle;  /* gør ikonet perfekt justeret med teksten */
+  margin-right: 8px;       /* lille mellemrum mellem ikon og tekst */
+}
 
 
 /* --- OM MIG sektion: billede venstre, tekst højre --- */
@@ -94,10 +117,10 @@ background: rgb(61, 7, 7);
   flex: 1;
   max-width: 500px;    /* boksen bliver max denne bredde */
   padding: 1.5rem;     /* luft indeni boksen */
-  background-color: #814c4c;
+  background-color: #2F1B11;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1); /* valgfri: giver en pæn boks */
-}
+  color: #ffffff; }
 
 /* --- her skal færdigheder ligge --- */
 
@@ -110,10 +133,11 @@ background: rgb(61, 7, 7);
 .contact-box {
   max-width: 500px;         /* samme stil som om mig-boksen */
   padding: 1.5rem;          
-  background-color: #7e1c1c;   /* du kan ændre farven senere */
+  background-color: #2F1B11;   /* du kan ændre farven senere */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(146, 27, 27, 0.1);
   margin-top: 1rem;
+  color: #ffffff;
 }
 
 
