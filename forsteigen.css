@@ -26,7 +26,7 @@ body::before {
   background-size: contain;
   background-repeat: no-repeat;
   filter: sepia(40%) contrast(90%) brightness(85%); /* <-- gør den vintage */
-  opacity: 0.08;
+  opacity: 0.12;
   pointer-events: none;
   z-index: -1;
 }
@@ -47,7 +47,7 @@ header {
   flex-direction: column; /* mobil */
   justify-content: center;
   gap: 1.5rem;
-  background: rgb(61, 7, 7);
+  background: #4A3F36;
 }
 
 
@@ -72,7 +72,7 @@ header {
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
-  background: #2F1B11;
+  background: #4A3F36;
   align-items: center; /* <-- NY! centrerer ikonet */
 }
 
@@ -89,7 +89,7 @@ header {
 .navigation {
   display: flex;
   flex-direction: column; /* mobil */
-  background: #2F1B11;   /* <-- FARVEN FLYTTET HER */
+  background: #4A3F36;   /* <-- FARVEN FLYTTET HER */
 }
 
 
@@ -107,11 +107,37 @@ header {
     flex-direction: row;      /* nu står links ved siden af hinanden */
     justify-content: center;  /* eller flex-end, hvis de skal til højre */
   }
+
+  /* HOVER LINJE EFFEKT */
+.navigation a {
+  position: relative; /* gør det muligt at placere linjen */
+}
+
+.navigation a::after {
+  content: "";
+  position: absolute;
+  left: 50%;               /* midten af ordet */
+  bottom: 5px; 
+  width: 0%;
+  height: 2px;
+  background-color: #C3A36A;
+  transform: translateX(-50%); /* centrer linjen */
+  transition: width 0.3s ease;
+}
+
+.navigation a:hover::after {
+  width: 100%;             /* vokser til fuld bredde mod begge sider */
+}
+.navigation a {
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .navigation a:hover {
-background: rgb(61, 7, 7);
+  color: #C3A36A;  /* antique gold tekst */
+  opacity: 0.9;    /* lille fade-in effekt */
 }
+
+
 
 .ikon {
   width: 20px;        /* ikonets størrelse */
@@ -138,13 +164,41 @@ background: rgb(61, 7, 7);
   width: 100%;
   border-radius: 8px;
 
+.about-image {
+  padding: 14px;
+  border: 4px double #C3A36A;  /* dobbelt Art Deco-linje */
+  border-radius: 4px;
+  position: relative;
+  background-color: rgba(0,0,0,0.05); /* svag mørk baggrund = vintage */
 }
+
+
+.about-image::before,
+.about-image::after {
+  content: "";
+  position: absolute;
+  border: 4px solid #C3A36A;
+  width: 24px;
+  height: 24px;
+}
+
+.about-image::before {
+  top: -8px;
+  left: -8px;
+}
+
+.about-image::after {
+  bottom: -8px;
+  right: -8px;
+}
+
+
 
 .about-text {
   flex: 1;
   max-width: 500px;    /* boksen bliver max denne bredde */
   padding: 1.5rem;     /* luft indeni boksen */
-  background-color: #5d4623;
+  background-color: #4A3F36;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1); /* valgfri: giver en pæn boks */
   color: #ffffff; }
@@ -160,7 +214,7 @@ background: rgb(61, 7, 7);
 .contact-box {
   max-width: 500px;         /* samme stil som om mig-boksen */
   padding: 1.5rem;          
-  background-color: #2F1B11;   /* du kan ændre farven senere */
+  background-color: #4A3F36;   /* du kan ændre farven senere */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(146, 27, 27, 0.1);
   margin-top: 1rem;
@@ -170,7 +224,7 @@ background: rgb(61, 7, 7);
 
 /* --- FOOTER --- */
 .site-footer {
-  background-color: rgb(61, 7, 7); /* samme farve som din navigation */
+  background-color: #4A3F36; /* samme farve som din navigation */
   color: white;
   text-align: center;
   padding: 1rem;
