@@ -7,10 +7,31 @@ html {
     scroll-behavior: smooth;
 }
 body {
-  margin: 0;
-  font-family: sans-serif;
   background-color: #D6D0C8;
+  position: relative;
+  overflow-x: hidden;
 }
+/* --- CENTRERET SVAG KRANIE-BAGGRUND --- */
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 600px;
+  height: 600px;
+
+  background-image: url("skull-kopi.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: sepia(40%) contrast(90%) brightness(85%); /* <-- gør den vintage */
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: -1;
+}
+
+
 header {
   position: sticky;
   top: 0;
@@ -46,16 +67,22 @@ header {
   letter-spacing: 3px;
 }
 
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  background: #2F1B11;
+  align-items: center; /* <-- NY! centrerer ikonet */
+}
+
 .nav-logo {
-  width: 18px;       /* mindre = passer bedre */
+  width: 18px;   /* <-- mindre ikon */
   height: auto;
   margin-left: 1rem;
-}
-
-
-.nav-logo {
   filter: invert(100%);
 }
+
 
 
 
@@ -117,7 +144,7 @@ background: rgb(61, 7, 7);
   flex: 1;
   max-width: 500px;    /* boksen bliver max denne bredde */
   padding: 1.5rem;     /* luft indeni boksen */
-  background-color: #2F1B11;
+  background-color: #5d4623;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1); /* valgfri: giver en pæn boks */
   color: #ffffff; }
