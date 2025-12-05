@@ -9,100 +9,122 @@ html {
 body {
   margin: 0;
   font-family: sans-serif;
-  
 }
 header {
   position: sticky;
   top: 0;
-  background-color: white; /* vigtigt ellers kan man se igennem */
-  z-index: 1000;           /* så den ligger over indholdet */
-}
-header {
+  background-color: white;
   border-bottom: 1px solid #ddd;
+  z-index: 1000;
 }
 
-header nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
+
+
+.navigation {
+  display: flex;
+  flex-direction: column; /* mobil */
+  justify-content: center;
+  gap: 1.5rem;
+  background: rgb(61, 7, 7);
 }
 
-header nav a:hover {
-  text-decoration: underline;
-}
-/* ---- Andre styles ---- */
 
 header {
   position: sticky;
   top: 0;
 }
 
-.navigation ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  
-  display: flex;
-  flex-direction: column;   /* Vertikal menu på mobil */
-  width: 100%;
-}
-.navigation li {
-  width: 100%;
-}
+
 
 .navigation a {
   display: block;
   text-align: center;
   padding: 16px;
-  background: rgb(61, 7, 7);
   color: white;
   text-decoration: none;
   letter-spacing: 3px;
+}
+.navigation {
+  display: flex;
+  flex-direction: column; /* mobil */
+  background: rgb(61, 7, 7);   /* <-- FARVEN FLYTTET HER */
+}
+
+
+/* MOBILE FIRST: lodret menu */
+.navigation {
+  display: flex;
+  flex-direction: column;
+}
+
+/* STØRRE SKÆRME: vandret menu */
+@media (min-width: 750px) {
+  .navigation {
+    flex-direction: row;      /* nu står links ved siden af hinanden */
+    justify-content: center;  /* eller flex-end, hvis de skal til højre */
+  }
 }
 
 .navigation a:hover {
 background: rgb(61, 7, 7);
 }
 
-/* --- STØRRE SKÆRME (fx computer) --- */
-@media (min-width: 750px) {
-  .navigation ul {
-    flex-direction: row;  /* Gør menuen vandret */
-    justify-content: flex-end; /* Skub alt til højre */
-    
-  }
 
-  .navigation li {
-    width: auto; /* så knapperne bliver smalle i stedet for 100% brede */
-  }
 
-  .navigation a {
-    padding: 20px;
-  }
- 
-}
 /* --- OM MIG sektion: billede venstre, tekst højre --- */
 
+#about {
+  padding: 0 1.5rem;
+}
+
 .about-row {
-  display: flex;          /* gør at billed og tekst står ved siden af hinanden */
-  align-items: flex-start;
-  gap: 2rem;
+  display: flex;          /* lægger billed + tekst ved siden af hinanden */
+  gap: 2rem;              /* luft imellem dem */
+  align-items: center;    /* gør dem vertikalt aligned */
 }
 
 .about-image img {
-  max-width: 250px;       /* billede venstre */
+  max-width: 250px;       /* størrelse på billedet */
   width: 100%;
-  display: block;
   border-radius: 8px;
+
 }
 
 .about-text {
   flex: 1;
-    background-color: blue;
-  padding: 1rem;
-  border-radius: 8px;                /* tekst højre */
+  max-width: 500px;    /* boksen bliver max denne bredde */
+  padding: 1.5rem;     /* luft indeni boksen */
+  background-color: #814c4c;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* valgfri: giver en pæn boks */
+}
+
+/* --- her skal færdigheder ligge --- */
+
+
+/* --- KONTAKT SEKTION --- */
+#contact {
+  padding: 1.5rem;
+}
+
+.contact-box {
+  max-width: 500px;         /* samme stil som om mig-boksen */
+  padding: 1.5rem;          
+  background-color: #7e1c1c;   /* du kan ændre farven senere */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(146, 27, 27, 0.1);
+  margin-top: 1rem;
 }
 
 
+/* --- FOOTER --- */
+.site-footer {
+  background-color: rgb(61, 7, 7); /* samme farve som din navigation */
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;   /* luft op til kontaktsektionen */
+  font-size: 0.9rem;
+}
 
 
