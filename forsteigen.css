@@ -246,6 +246,20 @@ header {
 .skill-img {
   width: 100px;
   border-radius: 4px;
+
+}
+.skill-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* ← styrer størrelsen */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skill-gallery img {
+  width: 100%;          /* fylder kolonnen */
+  height: auto;
+  border-radius: 6px;
+  border: 2px solid #C3A36A; /* lille guldramme */
 }
 
 
@@ -308,4 +322,49 @@ header {
   font-size: 0.9rem;
 }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;          /* afstand mellem felterne */
+}
+
+.contact-form label {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #C3A36A;   /* lille guld-kant */
+  background-color: #D6D0C8;   /* lys baggrund */
+  color: #2B2B2B;
+  font: inherit;               /* samme font som resten af siden */
+}
+
+.contact-form textarea {
+  resize: vertical;            /* kun højde kan ændres, ikke bredde */
+}
+
+.contact-form button {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  border: 2px solid #C3A36A;
+  background-color: #C3A36A;
+  color: #2B2B2B;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.contact-form button:hover {
+  background-color: #b09157;
+  transform: translateY(-1px);
+}
 
