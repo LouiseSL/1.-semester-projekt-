@@ -290,7 +290,7 @@ header {
 
 /* Zoom-effekt */
 .skill-gallery img:hover {
-  transform: scale(1.4);
+  transform: scale(1.3);
   z-index: 20;
   box-shadow: 0 8px 20px rgba(0,0,0,0.35);
 }
@@ -424,4 +424,55 @@ section, .skill-box {
     max-width: 1100px;
     margin: 0 auto;
   }
+}
+
+/* GENEREL STRUKTUR */
+section {
+  margin-top: 3rem;        /* luft mellem sektionerne */
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;   /* luft under overskrift */
+}
+
+/* FÆRDIGHEDER */
+.skills-section {
+  color: white;
+}
+
+.skill-box {
+  margin-bottom: 3rem;     /* luft mellem hver kategori */
+}
+
+.skill-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.skill-box p {
+  margin-top: 0.75rem;
+}
+
+/* Gør færdigheder til pæne kort (uden at ændre mobile-first) */
+#skills .skill-box {
+  background: rgba(255, 255, 255, 0.15);  /* diskret lys baggrund */
+  border: 2px solid #C3A36A;              /* din guldlinje */
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 0 0 2rem 0;                      /* luft mellem kort */
+}
+
+/* Sørg for at overskrift, billeder og tekst står “i system” */
+#skills .skill-box h3 {
+  margin-bottom: 1rem;
+}
+
+#skills .skill-gallery {
+  margin-top: 1rem;
+}
+
+#skills .skill-box p {
+  margin-top: 1rem;
+  max-width: 60ch;                         /* gør tekst mere læsevenlig */
 }
