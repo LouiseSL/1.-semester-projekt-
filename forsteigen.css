@@ -481,3 +481,13 @@ h2 {
   margin-top: 1rem;
   max-width: 60ch;                         /* gør tekst mere læsevenlig */
 }
+
+.skill-box h4 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #C3A36A;
+}
+
