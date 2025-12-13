@@ -3,6 +3,17 @@
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box; }
+
+  /* Brødtekst – høj læsbarhed */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Overskrifter og navigation – lidt karakter */
+h1, h2, h3, h4, .navigation a {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -507,5 +518,59 @@ h2 {
 .skill-box h3:not(:first-child) {
   text-transform: uppercase;
   font-size: 0.9rem;
-  color: #C3A36A;
+  color:#9C7A3E; 
+}
+
+/* HOVEDOVERSKRIFTER */
+h2 {
+  font-size: 2.2rem;
+  color: #2B2B2B;      /* mørk, rolig */
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: #2B2B2B;
+  margin-bottom: 1rem;
+}
+
+/* UNDEROVERSKRIFTER */
+.skill-box h4 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Tekst + billeder sammen (mobile first) */
+.skill-row {
+  display: flex;
+  flex-direction: column; /* mobil: ovenpå hinanden */
+  gap: 1rem;
+}
+
+.skill-text {
+  border: 2px solid #C3A36A;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  color: #2B2B2B; /* hvis teksten ligger på lys baggrund */
+}
+
+/* Desktop: ved siden af hinanden */
+@media (min-width: 750px) {
+  .skill-row {
+    flex-direction: row;
+    align-items: start;
+  }
+
+  .skill-text {
+    flex: 1;
+    max-width: 320px; /* gør boksen pæn og ikke for bred */
+  }
+
+  .skill-row .skill-gallery {
+    flex: 2;
+  }
 }
