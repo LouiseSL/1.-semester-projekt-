@@ -286,6 +286,11 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 1.5rem;
+  .skill-gallery {
+  justify-content: center;
+  justify-items: center;
+}
+
 }
 
 /* Zoom-effekt */
@@ -491,3 +496,16 @@ h2 {
   color: #C3A36A;
 }
 
+/* UNDEROVERSKRIFTER I FÆRDIGHEDER */
+.skill-box h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.skill-box h3:not(:first-child) {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #C3A36A;
+}
