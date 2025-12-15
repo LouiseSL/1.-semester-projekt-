@@ -491,7 +491,24 @@ h2 {
 
 #skills .skill-gallery {
   margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* dine billeder i system */
+  gap: 1rem;
+  align-items: start; /* top-align inde i galleriet */
 }
+
+.skill-gallery img {
+  display: block;
+}
+
+/* Override: når gallery står ved siden af tekst (skill-row), skal den ikke skubbes ned */
+.skill-row .skill-gallery {
+  margin-top: 0;
+  .skill-row {
+  align-items: flex-start;
+}
+}
+
 
 #skills .skill-box p {
   margin-top: 1rem;
@@ -546,9 +563,11 @@ h3 {
 /* Tekst + billeder sammen (mobile first) */
 .skill-row {
   display: flex;
-  flex-direction: column; /* mobil: ovenpå hinanden */
+  flex-direction: column;
   gap: 1rem;
+  align-items: flex-start; /* gør at ting starter i toppen */
 }
+
 
 .skill-text {
   border: 2px solid #C3A36A;
@@ -562,7 +581,7 @@ h3 {
 @media (min-width: 750px) {
   .skill-row {
     flex-direction: row;
-    align-items: start;
+    align-items: flex-start;
   }
 
   .skill-text {
@@ -573,4 +592,9 @@ h3 {
   .skill-row .skill-gallery {
     flex: 2;
   }
+}
+/* FIX: top-align gallery ved siden af tekst (skal stå ALLER NEDERST i CSS) */
+#skills .skill-row .skill-gallery {
+  margin-top: 0 !important;
+  align-self: flex-start;
 }
