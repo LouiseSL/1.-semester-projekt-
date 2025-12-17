@@ -1,43 +1,75 @@
 
-* { margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box; }
-
-  /* Brødtekst – høj læsbarhed */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Overskrifter og navigation – lidt karakter */
-h1, h2, h3, h4, .navigation a {
-  font-family: Georgia, "Times New Roman", serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
+
 body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   background-color: #D6D0C8;
+  color: #2B2B2B;
   position: relative;
   overflow-x: hidden;
 }
-/* --- CENTRERET SVAG KRANIE-BAGGRUND --- */
+
+
+h1, h2, h3, h4, .navigation a {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #2B2B2B;
+  margin-bottom: 3rem;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.6rem;
+  color: #2B2B2B;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+h4 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #C3A36A;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1rem;
+  max-width: 65ch;
+}
+
+
 body::before {
   content: "";
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   width: 600px;
   height: 600px;
-
-  background-image: url("skull-kopi.webp");
+  background-image: url("webp/skull-kopi.webp");
   background-size: contain;
   background-repeat: no-repeat;
-  filter: sepia(40%) contrast(90%) brightness(85%); /* <-- gør den vintage */
-  opacity: 0.10;
+  filter: sepia(40%) contrast(90%) brightness(85%);
+  opacity: 0.08;
   pointer-events: none;
   z-index: -1;
 }
@@ -46,74 +78,45 @@ body::before {
 header {
   position: sticky;
   top: 0;
-  background-color: white;
-  border-bottom: 1px solid #ddd;
+  background-color: #4A3F36;
+  border-bottom: 2px solid #C3A36A;
   z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-
-
-header {
-  position: sticky;
-  top: 0;
-}
-
-
-.navigation a {
-  display: block;
-  text-align: center;
-  padding: 16px;
-  color: white;
-  text-decoration: none;
-  letter-spacing: 3px;
-}
-
-
-
-.nav-logo {
-  width: 18px;   /* <-- mindre ikon */
-  height: auto;
-  margin-left: 1rem;
-  filter: invert(100%);
-}
-
-
-
-/* MOBILE FIRST — navigation lodret på mobil */
 .navigation {
   display: flex;
   flex-direction: column;
-  align-items: center;     /* centrér links og ikon */
+  align-items: center;
   justify-content: center;
-  gap: 1rem;
-  background: #4A3F36;
-  padding: 0.5rem 0;
+  gap: 1.2rem;
+  padding: 1rem 0;
 }
 
 .nav-logo {
-  width: 22px;
+  width: 24px;
   height: auto;
-  filter: invert(100%); /* gør skull hvid */
-  margin-bottom: 0.3rem;
+  filter: invert(100%);
+  margin-bottom: 0.5rem;
 }
 
-/* Links */
 .navigation a {
   display: block;
   color: white;
   text-decoration: none;
-  letter-spacing: 3px;
-  padding: 10px;
+  letter-spacing: 2px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
   position: relative;
-  transition: color 0.3s ease, opacity 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-/* HOVER LINJE */
+/* Hover underline effect */
 .navigation a::after {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: 2px;
+  bottom: 0;
   width: 0%;
   height: 2px;
   background-color: #C3A36A;
@@ -127,108 +130,85 @@ header {
 
 .navigation a:hover {
   color: #C3A36A;
-  opacity: 0.9;
 }
 
-/* DESKTOP — vandret menu */
+/* Desktop navigation - horizontal */
 @media (min-width: 750px) {
   .navigation {
     flex-direction: row;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
+    padding: 1.2rem 0;
   }
 
   .nav-logo {
-    margin-right: 1.5rem;
+    margin-right: 2rem;
     margin-bottom: 0;
   }
 }
 
 
-
-/* MOBILE FIRST: lodret menu */
-
-/* STØRRE SKÆRME: vandret menu */
-@media (min-width: 750px) {
-  .navigation {
-    flex-direction: row;      /* nu står links ved siden af hinanden */
-    justify-content: center;  /* eller flex-end, hvis de skal til højre */
-  } }
-
-  /* HOVER LINJE EFFEKT */
-.navigation a {
-  position: relative; /* gør det muligt at placere linjen */
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.navigation a::after {
-  content: "";
-  position: absolute;
-  left: 50%;               /* midten af ordet */
-  bottom: 5px; 
-  width: 0%;
-  height: 2px;
-  background-color: #C3A36A;
-  transform: translateX(-50%); /* centrer linjen */
-  transition: width 0.3s ease;
+section {
+  max-width: 1400px;
+  margin: 0 auto 5rem auto;
+  padding: 0;
 }
 
-.navigation a:hover::after {
-  width: 100%;             /* vokser til fuld bredde mod begge sider */
-}
-.navigation a {
-  transition: color 0.3s ease, opacity 0.3s ease;
+section:first-of-type {
+  margin-top: 5rem;
 }
 
-.navigation a:hover {
-  color: #C3A36A;  /* antique gold tekst */
-  opacity: 0.9;    /* lille fade-in effekt */
+section:nth-of-type(2) {
+  margin-top: -2rem;
 }
 
-
-
-.ikon {
-  width: 20px;        /* ikonets størrelse */
-  height: auto;
-  vertical-align: middle;  /* gør ikonet perfekt justeret med teksten */
-  margin-right: 8px;       /* lille mellemrum mellem ikon og tekst */
-}
-
-
-/* --- OM MIG sektion: billede venstre, tekst højre --- */
 
 #about {
-  padding: 0 1.5rem;
-}
-
-.about-row {
-  display: flex;          /* lægger billed + tekst ved siden af hinanden */
-  gap: 2rem;              /* luft imellem dem */
-  align-items: center;    /* gør dem vertikalt aligned */
-}
-
-.about-image {
-  padding: 14px;
-  border: 4px double #C3A36A;
-  border-radius: 4px;
-  position: relative;
-  background-color: rgba(0,0,0,0.05);
-  max-width: 250px;     /* ← denne styrer størrelsen */
-}
- 
-.about-image img {
-  width: 100%;          /* ← fylder containeren */
-  height: auto;
+  padding: 3rem 2rem;
+  background-color: rgba(74, 63, 54, 0.15);
   border-radius: 8px;
 }
 
+.about-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: stretch;
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-/* Deco hjørner */
+.about-image {
+  padding: 16px;
+  border: 4px double #C3A36A;
+  border-radius: 4px;
+  position: relative;
+  background-color: rgba(255,255,255,0.3);
+  max-width: 280px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
+
+/* Decorative corners */
 .about-image::before,
 .about-image::after {
   content: "";
   position: absolute;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border: 4px solid #C3A36A;
 }
 
@@ -246,27 +226,33 @@ header {
   border-top: none;
 }
 
-
-
 .about-text {
   flex: 1;
-  max-width: 500px;
-  padding: 1.5rem;
-
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem 2.5rem;
   background-color: #4A3F36;
-
-  /* Deco ramme */
   border: 4px double #C3A36A;
   position: relative;
-
   color: #ffffff;
+  line-height: 1.8;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
 }
+
+.about-text p {
+  max-width: 100%;
+  font-size: 1.05rem;
+}
+
 .about-text::before,
 .about-text::after {
   content: "";
   position: absolute;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border: 4px solid #C3A36A;
 }
 
@@ -284,82 +270,266 @@ header {
   border-top: none;
 }
 
+/* Desktop: side by side - 25% image, 75% text */
+@media (min-width: 750px) {
+  .about-row {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 3rem;
+  }
 
-.skills-section {
-  padding: 1.5rem 1.5rem 1.5rem 2.5rem; 
-  /* top | right | bottom | left */
-  color: white;
+@media (min-width: 750px) {
+  .about-image {
+    flex: 0 0 32%;
+    max-width: 32%;
+  }
+
+  .about-text {
+    flex: 0 0 calc(68% - 3rem);
+    max-width: calc(68% - 3rem);
+  }
+}
+
 }
 
 
-/* GØR BILLEDERNE STORE FRA START */
+.skills-section {
+  padding: 3rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: rgba(74, 63, 54, 0.15);
+  border-radius: 8px;
+}
+
+.skill-box {
+  background: rgba(74, 63, 54, 0.85);
+  border: 3px solid #C3A36A;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.skill-box h3 {
+  color: #C3A36A;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #C3A36A;
+  padding-bottom: 0.75rem;
+}
+
+.skill-box h4 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+  padding-left: 0.5rem;
+  border-left: 4px solid #C3A36A;
+}
+
+.skill-box h4:first-of-type {
+  margin-top: 0;
+}
+
+.skill-box p {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(0,0,0,0.2);
+  border-left: 4px solid #C3A36A;
+  border-radius: 4px;
+  max-width: 100%;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Skill row layout */
+.skill-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: stretch;
+  margin-bottom: 2rem;
+}
+
+.skill-text {
+  border: 2px solid #C3A36A;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: rgba(195, 163, 106, 0.15);
+  line-height: 1.7;
+}
+
+.skill-text p {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.skill-text p:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+/* Desktop: text and gallery side by side */
+@media (min-width: 750px) {
+  .skill-row {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+
+  .skill-text {
+    flex: 0 0 320px;
+    max-width: 320px;
+  }
+
+  .skill-row .skill-gallery {
+    flex: 1;
+  }
+}
+
+
 .skill-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 1.5rem;
-  .skill-gallery {
-  justify-content: center;
+  margin-top: 1.5rem;
+  align-items: start;
   justify-items: center;
 }
 
+.skill-row .skill-gallery {
+  margin-top: 0;
+  align-self: flex-start;
 }
 
-/* Zoom-effekt */
-.skill-gallery img:hover {
-  transform: scale(1.6);
-  z-index: 20;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-}
-
-
-/* BILLEDERNE SELV */
 .skill-gallery img {
-  width: 100%;       /* fylder hele grid-pladsen */
-  height: auto;  
-  max-height: 220px;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  max-height: 240px;
   object-fit: contain;
-  background-color: #f0ece6;
-  padding: 0.5rem;
-
-  border: 2px solid #C3A36A;
-  border-radius: 5px;
-  transition: transform 0.35s ease, box-shadow 0.3s ease;
+  background-color: #f5f1ec;
+  padding: 0.75rem;
+  border: 3px solid #C3A36A;
+  border-radius: 6px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, z-index 0s;
   position: relative;
   z-index: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.skill-gallery img:hover {
+  transform: scale(1.65);
+  z-index: 20;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
 
 
-
-/* --- KONTAKT SEKTION --- */
 #contact {
-  padding: 1.5rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: rgba(74, 63, 54, 0.15);
+  border-radius: 8px;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-section h2 {
+  width: 100%;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: stretch;
 }
 
 .contact-box {
-  max-width: 500px;         /* samme stil som om mig-boksen */
-  padding: 1.5rem;          
-  background-color: #4A3F36;
-  /* du kan ændre farven senere */
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(146, 27, 27, 0.1);
-  margin-top: 1rem;
-  color: #ffffff;
-}
-.contact-box {
-  max-width: 500px;
-  padding: 1.5rem;
+  flex: 1;
+  margin: 0;
+  padding: 2.5rem 2rem;
   background-color: #4A3F36;
   border: 4px double #C3A36A;
+  border-radius: 8px;
   position: relative;
   color: white;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  text-align: left;
+}
+
+.contact-info {
+  flex: 1;
+  padding: 2.5rem 2rem;
+  background-color: #4A3F36;
+  border: 4px double #C3A36A;
+  border-radius: 8px;
+  position: relative;
+  color: white;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact-info h3 {
+  color: #C3A36A;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.contact-info a {
+  color: #C3A36A;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #d4b076;
+}
+
+.contact-info::before,
+.contact-info::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #C3A36A;
+}
+
+.contact-info::before {
+  top: -10px;
+  left: -10px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.contact-info::after {
+  bottom: -10px;
+  right: -10px;
+  border-left: none;
+  border-top: none;
 }
 
 .contact-box::before,
 .contact-box::after {
   content: "";
   position: absolute;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border: 4px solid #C3A36A;
 }
 
@@ -377,224 +547,114 @@ header {
   border-top: none;
 }
 
-
-/* --- FOOTER --- */
-.site-footer {
-  background-color: #4A3F36; /* samme farve som din navigation */
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;   /* luft op til kontaktsektionen */
-  font-size: 0.9rem;
-}
-
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;          /* afstand mellem felterne */
+  gap: 1.2rem;
+  text-align: left;
 }
 
 .contact-form label {
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
+  color: #C3A36A;
+  font-weight: 600;
+  margin-bottom: -0.5rem;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 1rem;
   border-radius: 4px;
-  border: 1px solid #C3A36A;   /* lille guld-kant */
-  background-color: #D6D0C8;   /* lys baggrund */
+  border: 2px solid #C3A36A;
+  background-color: #f5f1ec;
   color: #2B2B2B;
-  font: inherit;               /* samme font som resten af siden */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #d4b076;
+  box-shadow: 0 0 0 3px rgba(195, 163, 106, 0.2);
 }
 
 .contact-form textarea {
-  resize: vertical;            /* kun højde kan ændres, ikke bredde */
+  resize: vertical;
+  min-height: 120px;
 }
 
 .contact-form button {
-  margin-top: 0.5rem;
-  padding: 0.6rem 1rem;
+  margin-top: 0.75rem;
+  padding: 0.85rem 2rem;
   border-radius: 4px;
   border: 2px solid #C3A36A;
   background-color: #C3A36A;
   color: #2B2B2B;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  font-size: 0.95rem;
+  align-self: center;
+  min-width: 200px;
 }
 
 .contact-form button:hover {
-  background-color: #b09157;
-  transform: translateY(-1px);
+  background-color: #d4b076;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* MOBILE FIRST – fuld bredde */
-section, .skill-box {
-  padding: 1.5rem;
-}
-
-/* DESKTOP – centrer og begræns bredde */
-@media (min-width: 750px) {
-  section, .skill-box {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-}
-
-/* GENEREL STRUKTUR */
-section {
-  margin-top: 3rem;        /* luft mellem sektionerne */
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;   /* luft under overskrift */
-}
-
-/* FÆRDIGHEDER */
-.skills-section {
-  color: white;
-}
-
-.skill-box {
-  margin-bottom: 3rem;     /* luft mellem hver kategori */
-}
-
-.skill-box h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-}
-
-.skill-box p {
-  margin-top: 0.75rem;
-}
-
-/* Gør færdigheder til pæne kort (uden at ændre mobile-first) */
-#skills .skill-box {
-  background: rgba(255, 255, 255, 0.15);  /* diskret lys baggrund */
-  border: 2px solid #C3A36A;              /* din guldlinje */
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin: 0 0 2rem 0;                      /* luft mellem kort */
-}
-
-/* Sørg for at overskrift, billeder og tekst står “i system” */
-#skills .skill-box h3 {
-  margin-bottom: 1rem;
-}
-
-#skills .skill-gallery {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* dine billeder i system */
-  gap: 1rem;
-  align-items: start; /* top-align inde i galleriet */
-}
-
-.skill-gallery img {
-  display: block;
-}
-
-/* Override: når gallery står ved siden af tekst (skill-row), skal den ikke skubbes ned */
-.skill-row .skill-gallery {
-  margin-top: 0;
-  .skill-row {
-  align-items: flex-start;
-}
+.contact-form button:active {
+  transform: translateY(0);
 }
 
 
-#skills .skill-box p {
-  margin-top: 1rem;
-  max-width: 60ch;                         /* gør tekst mere læsevenlig */
-}
-
-.skill-box h4 {
-  margin-top: 1.25rem;
-  margin-bottom: 0.75rem;
-  font-size: 1.05rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.site-footer {
+  background-color: #4A3F36;
   color: #C3A36A;
-}
-
-/* UNDEROVERSKRIFTER I FÆRDIGHEDER */
-.skill-box h3 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-}
-
-.skill-box h3:not(:first-child) {
-  text-transform: uppercase;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 4rem;
   font-size: 0.9rem;
-  color:#9C7A3E; 
-}
-
-/* HOVEDOVERSKRIFTER */
-h2 {
-  font-size: 2.2rem;
-  color: #2B2B2B;      /* mørk, rolig */
-  margin-bottom: 1.5rem;
-}
-
-h3 {
-  font-size: 1.4rem;
-  color: #2B2B2B;
-  margin-bottom: 1rem;
-}
-
-/* UNDEROVERSKRIFTER */
-.skill-box h4 {
-  font-size: 0.95rem;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-
-/* Tekst + billeder sammen (mobile first) */
-.skill-row {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: flex-start; /* gør at ting starter i toppen */
+  border-top: 2px solid #C3A36A;
 }
 
 
-.skill-text {
-  border: 2px solid #C3A36A;
-  padding: 1rem;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.08);
-  color: #2B2B2B; /* hvis teksten ligger på lys baggrund */
-}
-
-/* Desktop: ved siden af hinanden */
 @media (min-width: 750px) {
-  .skill-row {
+  section:first-of-type {
+    margin-top: 6rem;
+  }
+
+  section {
+    margin-bottom: 6rem;
+  }
+
+  section:nth-of-type(2) {
+    margin-top: -3rem;
+  }
+
+  .skill-box {
+    padding: 3rem 2.5rem;
+  }
+
+  .contact-box {
+    padding: 3rem 2.5rem;
+  }
+
+  .contact-info {
+    padding: 3rem 2.5rem;
+  }
+
+  .contact-content {
     flex-direction: row;
-    align-items: flex-start;
+    gap: 3rem;
   }
-
-  .skill-text {
-    flex: 1;
-    max-width: 320px; /* gør boksen pæn og ikke for bred */
-  }
-
-  .skill-row .skill-gallery {
-    flex: 2;
-  }
-}
-/* FIX: top-align gallery ved siden af tekst (skal stå ALLER NEDERST i CSS) */
-#skills .skill-row .skill-gallery {
-  margin-top: 0 !important;
-  align-self: flex-start;
 }
